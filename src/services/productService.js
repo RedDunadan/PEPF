@@ -1,9 +1,8 @@
-import { fetchProducts, fetchProductById } from "../api/fakeStoreApi";
+import { fetchProducts, fetchProductById } from "../api/fakeStoreApi.js";
 
 export const getAllProducts = async () => {
   try {
-    const products = await fetchProducts();
-    return products;
+    return await fetchProducts();
   } catch (error) {
     console.error("Error fetching products:", error);
   }
@@ -11,9 +10,16 @@ export const getAllProducts = async () => {
 
 export const getProductDetails = async (id) => {
   try {
-    const product = await fetchProductById(id);
-    return product;
+    return await fetchProductById(id);
   } catch (error) {
     console.error("Error fetching product details:", error);
+  }
+};
+
+export const deleteProduct = async (id) => {
+  try {
+    return await deleteProduct(id);
+  } catch (error) {
+    console.error("Error deleting product:", error);
   }
 };
