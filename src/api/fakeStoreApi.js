@@ -16,3 +16,15 @@ async function handleResponse(promise) {
     throw error;
   }
 }
+
+export function fetchProducts() {
+  return handleResponse(api.get('/'));
+}
+
+export function fetchProductById(id) {
+  return handleResponse(api.get(`/${id}`));
+}
+
+export function deleteProduct(id) {
+  return handleResponse(api.delete(`/${id}`));
+}
