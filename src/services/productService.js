@@ -16,6 +16,14 @@ export const getProductDetails = async (id) => {
   }
 };
 
+export const createProduct = async (productData) => {
+  try {
+    return await createProduct(productData);
+  } catch (error) {
+    console.error("Error creating product:", error);
+  }
+};
+
 export const deleteProduct = async (id) => {
   try {
     return await deleteProduct(id);
